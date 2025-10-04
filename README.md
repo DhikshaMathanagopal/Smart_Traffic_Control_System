@@ -1,45 +1,53 @@
-# Smart-Traffic-Control-System-using-YOLOv3-and-OpenCV
-Real-Time Vehicle & Ambulance Detection with Dynamic Traffic Signal Control
 
-This project implements an AI-powered traffic management system that detects vehicles and ambulances in live or recorded footage using YOLOv3 and automatically adjusts traffic light signals to prioritize emergency response vehicles.
+This project simulates an **AI-powered traffic control system** that detects vehicles and ambulances using **YOLOv3**.  
+When an ambulance is detected (≥ 90 % confidence), the system turns the signal 🟢 green to prioritize emergency vehicles.  
 
-Built with Python, OpenCV, and Ultralytics YOLOv3u, this simulation demonstrates how computer vision can optimize real-world traffic control.
+Built with **Python, OpenCV, and Ultralytics YOLOv3u**, this project demonstrates how computer vision can optimize real-world traffic management.  
 
-YOLOv3u-based vehicle detection – detects cars, buses, trucks, and ambulances
-Ambulance priority logic – turns traffic signal 🟢 green only when detection confidence ≥ 90%
-Dynamic signal overlay – red/green lights generated directly with OpenCV (no images required)
-Color-based heuristic – detects white vans or trucks as possible ambulances
-Automatic frame saving – captures every ambulance detection to /output/
-
+<<<<<<< HEAD
 System Architecture
 A[Traffic Video] --> B[YOLOv3u Model]
 B --> C[Vehicle Detection + Confidence FilterinG
 C --> D[Ambulance Logic (≥0.9 Confidence)]
 D -->|Ambulance Detected| E[Traffic Signal -> GREEN
-D -->|No Ambulance| F[Traffic Signal -> RED]
 E --> G[Overlay Output Video + Save Frames]
 F --> G
+=======
+## Features
+>>>>>>> edf4ac9 (Updated professional README)
 
-Install Dependencies
-pip install --upgrade ultralytics torch torchvision torchaudio opencv-python numpy
+Real-time object detection using YOLOv3  
+Detects cars, trucks, buses, and ambulances  
+Signal turns **green** only when an ambulance is confidently detected  
+Automatically overlays traffic light and detection boxes  
+Saves ambulance detection frames in `/output/`  
+Simple, clean code — no extra image files required  
 
-Add Video File
+## Installation & Setup
 
-Place your input traffic video inside the data/ folder:
+### Clone this repository
+```bash
+git clone https://github.com/DhikshaMathanagopal/Smart_Traffic_Control_System.git
+cd Smart_Traffic_Control_System
+Create and activate a virtual environment
 
-Smart_Traffic_Control/data/traffic.mp4
+python3 -m venv venv
+source venv/bin/activate    
+Install dependencies
+bash
+Copy code
+pip install -r requirements.txt
+Add your traffic video
+Place your input video inside the data/ folder:
 
-Running the Project
-cd Smart_Traffic_Control
-source venv/bin/activate
+
+Smart_Traffic_Control_System/data/traffic.mp4
+Run the Simulation
 python src/YOLO_ultra.py
 
-Outputs
-screenshots/redsignal.png
-screenshots/greensignal.png
 
-Future Improvements:
-ntegrate multiple camera feeds for multi-lane control
-Deploy real-time version on Jetson Nano / Raspberry Pi
-Retrain YOLO with a custom “Ambulance” dataset for higher accuracy
-Integrate GPS + IoT sensors for live emergency vehicle routing
+Model: YOLOv3u (Ultralytics PyTorch version)
+
+Frameworks: PyTorch, OpenCV, NumPy
+
+Threshold: Ambulance detection ≥ 0.90 confidence
