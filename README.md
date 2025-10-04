@@ -34,10 +34,6 @@ cd Smart_Traffic_Control
 source venv/bin/activate
 python src/YOLO_ultra.py
 
-Outputs
-screenshots/redsignal.png
-screenshots/greensignal.png
-
 Future Improvements:
 ntegrate multiple camera feeds for multi-lane control
 Deploy real-time version on Jetson Nano / Raspberry Pi
