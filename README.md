@@ -13,9 +13,9 @@ Automatic frame saving – captures every ambulance detection to /output/
 
 System Architecture
 A[Traffic Video] --> B[YOLOv3u Model]
-B --> C[Vehicle Detection + Confidence Filtering]
+B --> C[Vehicle Detection + Confidence FilterinG
 C --> D[Ambulance Logic (≥0.9 Confidence)]
-D -->|Ambulance Detected| E[Traffic Signal -> GREEN]
+D -->|Ambulance Detected| E[Traffic Signal -> GREEN
 D -->|No Ambulance| F[Traffic Signal -> RED]
 E --> G[Overlay Output Video + Save Frames]
 F --> G
