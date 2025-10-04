@@ -1,0 +1,17 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Environment
+venv/
+env/
+
+# Model weights
+model/*.pt
+model/*.weights
+
+# Data files
+data/*.mp4
+
+# Outputs
+output/
